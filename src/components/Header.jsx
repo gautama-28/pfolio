@@ -138,7 +138,7 @@ export default function Header() {
 
       {/* Footer */}
       <div className="absolute bottom-8 right-8 text-xs text-gray-600 z-10">
-        ©2025 SHivam Gautam. All Rights Reserved
+        ©2025 Shivam Gautam. All Rights Reserved
       </div>
     </div>
   );
