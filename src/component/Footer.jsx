@@ -11,7 +11,7 @@ const Footer = () => {
           {/* Left content */}
           <div className="text-center md:text-left">
             <p className="text-sm text-neutral-400">
-            <span>Tushar Patel</span> <span className="italic">| Aspiring Software Engineer</span>
+            <span>Shivam Gautam</span> <span className="italic">| Aspiring Software Engineer</span>
             </p>
 
             <p className="mt-1 text-xs text-neutral-500">
@@ -24,7 +24,7 @@ const Footer = () => {
                 href="mailto:working.tusharpatel@gmail.com"
                 className="hover:text-white transition"
               >
-                working.tusharpatel@gmail.com
+                shivamgautama82@gmail.com
               </a>
             </p>
 
@@ -33,7 +33,7 @@ const Footer = () => {
           {/* Right content */}
           <div className="flex items-center gap-4">
             <a
-              href="https://github.com/tusharpatel0504"
+              href="https://github.com/gautama-28"
               target="_blank"
               rel="noopener noreferrer"
               className="text-neutral-500 hover:text-white transition"
@@ -42,7 +42,7 @@ const Footer = () => {
             </a>
 
             <a
-              href="https://www.linkedin.com/in/tusharpatel10954/"
+              href="https://www.linkedin.com/in/shivam-gautamaa/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-neutral-500 hover:text-white transition"
