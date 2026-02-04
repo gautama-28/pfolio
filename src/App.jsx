@@ -1,52 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
-import Header from './components/Header'
-import CustomCursor from './components/CustomCursor'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Menu from './components/Menu'
-import About from './components/About'
-import Projects from './components/Projects'
-import TextEffectFlipper from './components/ui/text-effect-flipper'
-import MyPage from './components/Contact'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import HomePage from './pages/HomePage'
+import Navbar from './component/Navbar'
+import Footer from './component/Footer'
 
 function App() {
-  const router = createBrowserRouter([
-    {
-      path: '/',
-      element: (
-        <>
-          <CustomCursor />
-          <Header />
-        </>
-      )
-    },
-    {
-      path: '/Menu',
-      element: <Menu />
-    },
-     {
-      path: '/about',
-      element: <About />
-    }, {
-      path: '/Contact',
-      element: <MyPage/>
-    },
-    {
-      path:'/Projects',
-       element: (
-        <>
-          <CustomCursor />
-          <Projects/>
-        </>
-      )
-    }
-  ]);
-
   return (
-    <RouterProvider router={router} />
-  );
+    <BrowserRouter>
+    <Navbar/>
+      <Routes>
+        <Route path="/" element={<HomePage/>} />
+      </Routes>
+    <Footer/>
+    </BrowserRouter>
+
+  )
 }
 
 export default App
-
