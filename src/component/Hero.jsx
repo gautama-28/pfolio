@@ -53,7 +53,7 @@ export default function Hero() {
         {/* Resume Button */}
         <div className="mt-5 flex justify-center md:justify-start">
           <a
-            href="/Tushar_Patel_Resume.pdf"
+            href="/ShivamGautam_Resume__latest.pdf"
             download
             className="inline-flex items-center justify-center rounded-md bg-white px-6 py-2.5 text-sm sm:text-base font-medium text-black transition-all duration-300 hover:bg-white/90"
           >
@@ -64,7 +64,7 @@ export default function Hero() {
 
       {/* Signature (desktop only) */}
       <div className="absolute bottom-20 right-8 z-10 hidden md:block text-right opacity-80">
-        <p className="text-xl -mb-2 font-medium tracking-wide">Tushar Patel</p>
+        <p className="text-xl -mb-2 font-medium tracking-wide">Shivam Gautam</p>
         <p className="text-base opacity-70">IIITBH ’27</p>
       </div>
 
