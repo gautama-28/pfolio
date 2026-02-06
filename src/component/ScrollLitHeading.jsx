@@ -1,61 +1,9 @@
-// import { motion, useScroll, useTransform } from "framer-motion";
-
-// const text =
-//   "I’m Tushar Patel an aspiring full-stack software developer learning to build scalable web applications and intuitive UI/UX experiences, with a strong focus on fundamentals, clarity, and continuous growth.";
-
-// export default function ScrollLitHeading({ sectionRef }) {
-//   const { scrollYProgress } = useScroll({
-//     target: sectionRef,
-//     offset: ["start start", "end end"],
-//   });
-
-//   return (
-//     <motion.h1
-//       className="
-//         max-w-6xl
-//         mx-auto
-//         text-center
-//         text-2xl
-//         sm:text-3xl
-//         md:text-4xl
-//         lg:text-5xl
-//         xl:text-6xl
-//         italic
-//         tracking-normal
-//         leading-snug
-//         md:leading-tight
-//         flex
-//         flex-wrap
-//         justify-center
-//         whitespace-normal
-//         break-normal
-//         hyphens-none
-//         pb-16
-//         pt-20
-//       "
-//     >
-//       {text.split("").map((char, i, arr) => {
-//         const color = useTransform(
-//           scrollYProgress,
-//           [i / arr.length, (i + 1) / arr.length],
-//           ["#484745", "#DDDAD4"]
-//         );
-
-//         return (
-//           <motion.span key={i} style={{ color }}>
-//             {char === " " ? "\u00A0" : char}
-//           </motion.span>
-//         );
-//       })}
-//     </motion.h1>
-//   );
-// }
 
 
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const text =
-  "I’m Tushar Patel an aspiring full-stack software developer learning to build scalable web applications and intuitive UI/UX experiences, with a strong focus on fundamentals, clarity, and continuous growth.";
+  "I’m Shivam Gautam an aspiring full-stack software developer learning to build scalable web applications and intuitive UI/UX experiences, with a strong focus on fundamentals, clarity, and continuous growth.";
 
 export default function ScrollLitHeading({ sectionRef }) {
   const { scrollYProgress } = useScroll({
