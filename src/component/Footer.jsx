@@ -21,7 +21,7 @@ const Footer = () => {
             <p className="mt-2 text-xs text-neutral-500">
               For queries:&nbsp;
               <a
-                href="mailto:working.tusharpatel@gmail.com"
+                href="mailto:shivamgautama82@gmail.com"
                 className="hover:text-white transition"
               >
                 shivamgautama82@gmail.com

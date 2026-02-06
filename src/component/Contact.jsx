@@ -71,7 +71,7 @@ const Contact = () => {
               <p>
                 <span className="text-white font-medium">Email:</span>{" "}
                 <a
-                  href="mailto:workingshivayadav@gmail.com"
+                  href="mailto:shivamgautama82@gmail.com"
                   className="hover:text-white transition"
                 >
                   shivamgautama82@gmail.com
