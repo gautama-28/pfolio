@@ -2,25 +2,24 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const services = [
- {
-  title: "Smart India Hackathon (SIH)",
-  desc:
-    "Secured 3rd position among 60 teams in internal college rounds by developing an innovative, problem-solving prototype.",
-  theme: "light",
-},
-{
-  title: "Hacktoberfest 2025 Supercontributor",
-  desc:
-    "Earned Supercontributor badge by merging 8+ PRs across 7 global open-source projects, raising issues, reviewing CI/CD pipelines, and collaborating with maintainers.",
-  theme: "red",
-},
-{
-  title: "DSA & Problem Solving",
-  desc:
-    "Solved 350+ problems on LeetCode across Easy, Medium, and Hard categories, demonstrating strong consistency and algorithmic thinking. Also a CodeChef 3-Star coder with a peak rating of 1769 in Division 2.",
-  theme: "dark",
-},
-
+  {
+    title: "National UI/UX Hackathon",
+    desc:
+      "Secured 2nd place at the National UI/UX Hackathon hosted by IIITDM Kancheepuram by designing a research-backed user experience for a real-world problem statement.",
+    theme: "light",
+  },
+  {
+    title: "GWEPP Workshop",
+    desc:
+      "Placed 3rd in a 32-hour software engineering and professional development workshop, strengthening technical communication, teamwork, and problem-solving skills.",
+    theme: "red",
+  },
+  {
+    title: "Competitive Programming",
+    desc:
+      "CodeChef 2-Star programmer (1408) and Codeforces participant (1105), regularly solving algorithmic problems in Java to strengthen data structures and problem-solving fundamentals.",
+    theme: "dark",
+  },
 ];
 
 const themeStyles = {
