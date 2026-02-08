@@ -3,66 +3,107 @@ import React from "react";
 const projects = [
   {
     id: "01",
-    title: "Enyugma Website",
-    subtitle: "Official techno-cultural fest website of IIIT Bhagalpur.",
+    title: "UPI Offline Mesh Payment System",
+    subtitle: "Offline-first payment system with encrypted mesh routing.",
     description:
-      "Designed and developed the official website for IIIT Bhagalpur’s annual techno-cultural fest using ReactJS and TailwindCSS, delivering a responsive interface and scalable backend services to support high traffic during the event.",
-    tech: ["ReactJS", "TailwindCSS", "Node.js", "Express"],
-    image: "/enyugma.png",
-    live: "https://enyugma.iiitbh.ac.in",
-  },
-  {
-    id: "02",
-    title: "OPCODE Website",
-    subtitle: "Open-source platform for collaborative development.",
-    description:
-      "Built an open-source platform focused on collaborative development and innovation, enabling developers to share, contribute, and scale community-driven projects through a clean and accessible web interface.",
+      "Developed an offline payment system where encrypted UPI transactions propagate across simulated Bluetooth mesh nodes and settle once internet connectivity becomes available.",
     tech: [
-      "ReactJS",
-      "TailwindCSS",
-      "Open Source",
-      "Community Platform",
-      "Node.js",
-      "Express",
+      "Java",
+      "Spring Boot",
+      "React",
+      "PostgreSQL",
+      "Redis",
+      "Docker",
     ],
-    image: "/OPCODE.png",
-    live: "https://opcode.gymkhana.iiitbh.ac.in/",
+    image: "/UPI Mesh.png",
+    live: "https://github.com/gautama-28/UPImesh",
   },
+
+{
+  id: "02",
+  title: "Deep Packet Inspection (DPI) Engine",
+  subtitle: "Java-based network traffic analysis and filtering system.",
+  description:
+    "Developed a Deep Packet Inspection engine in Java that parses raw PCAP files, extracts TLS SNI information from HTTPS handshakes, classifies network traffic, tracks connection flows, and applies rule-based packet filtering through single-threaded and multi-threaded processing pipelines.",
+  tech: [
+    "Java",
+    "Computer Networks",
+    "Multithreading",
+    "TCP/IP",
+    "TLS",
+    "PCAP",
+  ],
+  image: "/DPI.jpg",
+  live: "https://github.com/gautama-28/DpiEngine",
+},
+
   {
     id: "03",
-    title: "E-Summit Website",
-    subtitle: "Official website for IIIT Bhagalpur entrepreneurship summit.",
+    title: "IIITBH Nexus (Paperwallah)",
+    subtitle: "Academic platform for IIIT Bhagalpur students.",
     description:
-      "Developed the official website for IIIT Bhubaneswar’s annual entrepreneurship summit with a responsive frontend, real-time updates, and performance optimizations to handle large visitor traffic.",
+      "Collaborated with two developers to build a centralized platform using Spring Boot, React, JWT authentication, and PostgreSQL, simplifying access to academic resources.",
     tech: [
-      "ReactJS",
-      "TailwindCSS",
-      "Node.js",
-      "Express",
-      "SEO Optimization",
+      "Spring Boot",
+      "React",
+      "PostgreSQL",
+      "JWT",
+      "Docker",
+    ],
+    image: "/pyqhub.png",
+    live: "https://paperwallah.vercel.app/",
+  },
+
+  // {
+  //   id: "04",
+  //   title: "E-Commerce Shopping App",
+  //   subtitle: "Native Android shopping application.",
+  //   description:
+  //     "Developed a shopping application using Jetpack Compose and MVI architecture with authentication, wishlist, cart, checkout, Room Database, and DataStore.",
+  //   tech: [
+  //     "Kotlin",
+  //     "Jetpack Compose",
+  //     "MVI",
+  //     "Room",
+  //     "DataStore",
+  //   ],
+  //   image: "/shopping-app.png",
+  //   live: "YOUR_GITHUB_LINK",
+  // },
+
+  {
+    id: "04",
+    title: "E-Summit Website",
+    subtitle: "Official website for IIIT Bhagalpur Entrepreneurship Summit.",
+    description:
+      "Developed responsive React components and interactive event pages while collaborating with the design team to deliver the official E-Summit website.",
+    tech: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Vite",
     ],
     image: "/esummit.png",
     live: "https://esummit.iiitbh.ac.in",
   },
-  {
-  id: "04",
-  title: "Hospital Management System",
-  subtitle: "Full-stack MERN application for hospital operations",
-  description:
-    "Built a full-stack Hospital Management System with role-based access control (Admin, Doctor, Patient), secure authentication, and responsive UI. Features include real-time doctor revenue dashboards, centralized admin management, dynamic slot booking by specialization, and Razorpay payment integration.",
-  tech: [
-    "MongoDB",
-    "Express.js",
-    "ReactJS",
-    "Node.js",
-    "TailwindCSS",
-    "RBAC",
-    "Razorpay",
-  ],
-  image: "/doctor.png",
-  live: "https://doctor-appointment-frontend-ashen.vercel.app/",
-}
 
+  {
+    id: "05",
+    title: "Medzillo",
+    subtitle: "Healthcare queue management platform.",
+    description:
+      "Implemented role-based interfaces, reusable React components, and frontend integration with REST APIs and GraphQL for digital hospital queue management.",
+    tech: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "GraphQL",
+      "React Query",
+      "Axios",
+    ],
+    image: "/medzillo.png",
+    live: "https://medzillo.com/",
+  },
 ];
 
 const Project = () => {
