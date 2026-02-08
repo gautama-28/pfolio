@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { motion } from "framer-motion";
 
 const internships = [
@@ -29,26 +29,40 @@ const Internships = () => {
   const [index, setIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
-  const paginate = (dir) => {
+  const paginate = useCallback((dir) => {
     setIndex((prev) => (prev + dir + internships.length) % internships.length);
-  };
+  }, []);
 
   useEffect(() => {
     if (isHovered) return;
+
     const interval = setInterval(() => {
       paginate(1);
     }, AUTO_SLIDE_DELAY);
+
     return () => clearInterval(interval);
-  }, [index, isHovered]);
+  }, [paginate, isHovered]);
 
   useEffect(() => {
     const handleKey = (e) => {
       if (e.key === "ArrowLeft") paginate(-1);
       if (e.key === "ArrowRight") paginate(1);
     };
+
     window.addEventListener("keydown", handleKey);
+
     return () => window.removeEventListener("keydown", handleKey);
-  }, []);
+  }, [paginate]);
+
+  const visibleCards = useMemo(
+    () =>
+      [0, 1].map((stackIndex) => ({
+        stackIndex,
+        internship:
+          internships[(index + stackIndex) % internships.length],
+      })),
+    [index]
+  );
 
   return (
     <section className="bg-black text-white py-20 sm:py-20 relative overflow-hidden">
@@ -56,6 +70,7 @@ const Internships = () => {
         <h2 className="text-3xl sm:text-5xl lg:text-6xl italic font-light glow-text">
           Internship <span className="italic">Experience</span>
         </h2>
+
         <p className="text-gray-400 mt-3 text-sm sm:text-base">
           Hands-on industry experience building real-world products
         </p>
@@ -63,71 +78,70 @@ const Internships = () => {
 
       <div
         className="relative h-[520px] sm:h-[460px] lg:h-[420px] flex justify-center items-center px-4"
-        style={{ perspective: 1200 }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        {[0, 1, 2].map((stackIndex) => {
-          const internship = internships[(index + stackIndex) % internships.length];
-
-          return (
-            <motion.div
-              key={`${index}-${stackIndex}`}
-              drag={stackIndex === 0 ? "x" : false}
-              dragConstraints={{ left: 0, right: 0 }}
-              dragElastic={0.25}
-              onDragEnd={(e, info) => {
-                if (info.offset.x < -SWIPE_THRESHOLD) paginate(1);
-                if (info.offset.x > SWIPE_THRESHOLD) paginate(-1);
+        {visibleCards.map(({ stackIndex, internship }) => (
+          <motion.div
+            key={`${index}-${stackIndex}`}
+            drag={stackIndex === 0 ? "x" : false}
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.18}
+            onDragEnd={(e, info) => {
+              if (info.offset.x < -SWIPE_THRESHOLD) paginate(1);
+              if (info.offset.x > SWIPE_THRESHOLD) paginate(-1);
+            }}
+            animate={{
+              scale: 1 - stackIndex * SCALE_STEP,
+              y: stackIndex * CARD_OFFSET,
+              opacity: stackIndex === 0 ? 1 : 0.65,
+            }}
+            transition={{
+              duration: 0.35,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="absolute w-full max-w-4xl cursor-grab active:cursor-grabbing"
+            style={{
+              zIndex: 10 - stackIndex,
+              willChange: "transform, opacity",
+              transform: "translate3d(0,0,0)",
+            }}
+          >
+            <div
+              className="flex flex-col md:flex-row gap-6 sm:gap-8 p-6 sm:p-8 rounded-2xl border border-white/10"
+              style={{
+                background: "rgba(22,22,22,0.96)",
+                boxShadow: "0 10px 24px rgba(0,0,0,.45)",
+                userSelect: "none",
               }}
-              animate={{
-                scale: 1 - stackIndex * SCALE_STEP,
-                y: stackIndex * CARD_OFFSET,
-                rotateY: stackIndex === 0 ? 0 : -6,
-                opacity: stackIndex === 0 ? 1 : 0.6, // Lowered stack opacity for perf
-              }}
-              transition={{
-                duration: 0.45,
-                ease: [0.4, 0, 0.2, 1],
-              }}
-              // will-change: transform forces the browser to use GPU
-              className="absolute w-full max-w-4xl cursor-grab active:cursor-grabbing will-change-transform"
-              style={{ zIndex: 10 - stackIndex }}
             >
-              <div
-                className="flex flex-col md:flex-row gap-6 sm:gap-8 p-6 sm:p-8 rounded-2xl border border-white/10"
-                style={{
-                  background: "rgba(20,20,20,0.85)", // More opaque, less blur dependency
-                  backdropFilter: "blur(4px)", // Reduced from 20px
-                  WebkitBackdropFilter: "blur(4px)",
-                  boxShadow: "0 20px 40px rgba(0,0,0,0.6)",
-                  userSelect: "none",
-                }}
-              >
-                <div className="w-full md:w-1/3">
-                  <img
-                    src={internship.image}
-                    alt={internship.company}
-                    className="rounded-xl object-cover w-full h-[200px] sm:h-[240px] md:h-[280px]"
-                    draggable={false}
-                  />
-                </div>
-
-                <div className="w-full md:w-2/3">
-                  <h3 className="text-xl sm:text-2xl font-semibold mb-1 text-white">
-                    {internship.role}
-                  </h3>
-                  <p className="text-sm sm:text-base text-gray-400 mb-4 font-medium">
-                    {internship.company} • {internship.duration}
-                  </p>
-                  <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
-                    {internship.description}
-                  </p>
-                </div>
+              <div className="w-full md:w-1/3">
+                <img
+                  src={internship.image}
+                  alt={internship.company}
+                  draggable={false}
+                  loading="lazy"
+                  decoding="async"
+                  className="rounded-xl object-cover w-full h-[200px] sm:h-[240px] md:h-[280px]"
+                />
               </div>
-            </motion.div>
-          );
-        })}
+
+              <div className="w-full md:w-2/3">
+                <h3 className="text-xl sm:text-2xl font-semibold mb-1 text-white">
+                  {internship.role}
+                </h3>
+
+                <p className="text-sm sm:text-base text-gray-400 mb-4 font-medium">
+                  {internship.company} • {internship.duration}
+                </p>
+
+                <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
+                  {internship.description}
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        ))}
       </div>
 
       <button
@@ -151,4 +165,4 @@ const Internships = () => {
   );
 };
 
-export default Internships;
+export default React.memo(Internships);
