@@ -73,7 +73,7 @@ export default function Navbar() {
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="text-lg text-white italic font-semibold nav-glow glow-text"
         >
-          Tushar.
+          Gautama.
         </button>
 
         {/* Desktop Links */}

@@ -3,8 +3,8 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const text =
-  "I’m Shivam Gautam an aspiring full-stack software developer learning to build scalable web applications and intuitive UI/UX experiences, with a strong focus on fundamentals, clarity, and continuous growth.";
-
+  "I'm Shivam Gautam, a Computer Science undergraduate who enjoys building secure backend systems and modern full-stack applications. My work focuses on creating software that solves practical problems.";
+  
 export default function ScrollLitHeading({ sectionRef }) {
   const { scrollYProgress } = useScroll({
     target: sectionRef,

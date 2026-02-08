@@ -56,7 +56,7 @@ const Footer = () => {
          <div className="mt-8 pt-8 border-t border-neutral-800 text-center">
           <p className="text-7xl sm:text-8xl md:text-9xl font-semibold tracking-wider 
                         bg-gradient-to-b from-neutral-400 to-black bg-clip-text text-transparent italic">
-            Tushar.
+            Shivam.
           </p>
         </div>
 
