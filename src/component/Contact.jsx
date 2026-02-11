@@ -101,7 +101,7 @@ const Contact = () => {
               <input
                 type="text"
                 name="from_name"
-                placeholder="Shivam Gautam"
+                placeholder="Enter your name.."
                 required
                 className="
                   w-full rounded-lg
@@ -121,7 +121,7 @@ const Contact = () => {
               <input
                 type="email"
                 name="from_email"
-                placeholder="shivamgautama82@gmail.com"
+                placeholder="Enter your Email Address.."
                 required
                 className="
                   w-full rounded-lg
