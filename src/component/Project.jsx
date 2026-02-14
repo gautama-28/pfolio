@@ -54,25 +54,25 @@ const projects = [
     live: "https://paperwallah.vercel.app/",
   },
 
-  // {
-  //   id: "04",
-  //   title: "E-Commerce Shopping App",
-  //   subtitle: "Native Android shopping application.",
-  //   description:
-  //     "Developed a shopping application using Jetpack Compose and MVI architecture with authentication, wishlist, cart, checkout, Room Database, and DataStore.",
-  //   tech: [
-  //     "Kotlin",
-  //     "Jetpack Compose",
-  //     "MVI",
-  //     "Room",
-  //     "DataStore",
-  //   ],
-  //   image: "/shopping-app.png",
-  //   live: "YOUR_GITHUB_LINK",
-  // },
-
   {
     id: "04",
+    title: "E-Commerce Shopping App",
+    subtitle: "Native Android shopping application.",
+    description:
+      "Developed a shopping application using Jetpack Compose and MVI architecture with authentication, wishlist, cart, checkout, Room Database, and DataStore.",
+    tech: [
+      "Kotlin",
+      "Jetpack Compose",
+      "MVI",
+      "Room",
+      "DataStore",
+    ],
+    image: "/shopease.png",
+    live: "https://github.com/gautama-28/ShopEaseApp",
+  },
+
+  {
+    id: "05",
     title: "E-Summit Website",
     subtitle: "Official website for IIIT Bhagalpur Entrepreneurship Summit.",
     description:
@@ -88,7 +88,7 @@ const projects = [
   },
 
   {
-    id: "05",
+    id: "06",
     title: "Medzillo",
     subtitle: "Healthcare queue management platform.",
     description:
