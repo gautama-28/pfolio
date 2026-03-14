@@ -15,7 +15,7 @@ const Footer = () => {
             </p>
 
             <p className="mt-1 text-xs text-neutral-500">
-              A celebration of collaboration and innovation.
+              A celebration of collaboration with innovation.
             </p>
 
             <p className="mt-2 text-xs text-neutral-500">
